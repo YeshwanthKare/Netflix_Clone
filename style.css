@@ -1,0 +1,32 @@
+
+
+.original_movies {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.netflix-Originals .original_movies img {
+    width: 100px;
+    height: 130px;
+}
+
+.trending_now {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.trending_now .trending_movies img {
+    width: 100px;
+    height: 80px;
+}
+
+.top_rated {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.top_rated .top_rated_movies img {
+    width: 100px;
+    height: 80px;
+}
+                
