@@ -1,7 +1,10 @@
-
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 .original_movies {
-    overflow-x: scroll;
     white-space: nowrap;
 }
 
@@ -10,23 +13,42 @@
     height: 130px;
 }
 
-.trending_now {
-    overflow-x: scroll;
+.movies__container {
     white-space: nowrap;
 }
 
-.trending_now .trending_movies img {
+.movies .movies__container  img{
     width: 100px;
     height: 80px;
 }
 
-.top_rated {
-    overflow-x: scroll;
-    white-space: nowrap;
+.feature {
+    height: 400px;
+    background-image: url('https://images.firstpost.com/wp-content/uploads/2018/10/Netflix-and-Chill-1280.jpg');
+    background-size: cover;
+    padding: 0 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.top_rated .top_rated_movies img {
-    width: 100px;
-    height: 80px;
+.feature h2 {
+    font-size: 50px;
+    margin: 0;
+}
+
+.feature .featured__buttons button{
+    font-size: 16px;
+    color: white;
+    background-color: rgba(51, 51, 51, 0.5);
+    border: none;
+    padding: 4px 24px;
+    border-radius: 4px;
+}
+
+.feature_description {
+    max-width: 350px;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .45);
 }
                 
