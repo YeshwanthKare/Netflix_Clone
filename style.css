@@ -30,25 +30,52 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    background-position: center;
+}
+
+.feature::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .feature h2 {
     font-size: 50px;
     margin: 0;
+    z-index: 10;
 }
 
 .feature .featured__buttons button{
     font-size: 16px;
     color: white;
-    background-color: rgba(51, 51, 51, 0.5);
+    background-color: rgba(109, 109, 110, 0.7);
     border: none;
-    padding: 4px 24px;
+    padding: 8px 24px;
     border-radius: 4px;
+}
+
+.feature .featured__buttons .button__play {
+    color: black;
+    background-color: white;
+}
+
+.feature .featured__buttons {
+    z-index: 10;
+}
+
+.button__play i {
+    margin-right: 6px;
 }
 
 .feature_description {
     max-width: 350px;
     font-weight: 400;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .45);
+    z-index: 10;
 }
                 
