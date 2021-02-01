@@ -15,3 +15,9 @@
 ~ finish up the movies section
 ~ Understand Promises, APIs and Fetch...
 ~ Pull in movies data from an API
+
+27/01/2021
+
+~ Horizontal scroll for movies
+~ Retrieve the other movies from the API
+~ Add the hoover effect to individual movies

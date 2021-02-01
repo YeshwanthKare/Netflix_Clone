@@ -33,15 +33,37 @@ main{
 }
 
 .original_movies, .movies__container {
-    white-space: nowrap;
-    /* overflow-x: scroll; */
+    /* white-space: nowrap; */
+    display: flex;
+    overflow-x: scroll;
     padding-left: 50px;
+}
+
+.original_movies::-webkit-scrollbar, .movies__container::-webkit-scrollbar {
+    display: none;
+}
+
+.original_movies {
+    display: flex;
+    overflow-x: scroll;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .netflix-Originals .original_movies img {
     margin-right: 10px;
     width: 180px;
     height: 250px;
+}
+
+.original_movies img,.movies__container img {
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+
+.original_movies img:hover, .movies__container img:hover {
+    transform: scale(1.1);
+    
 }
 
 .movies .movies__container  img{
