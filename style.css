@@ -140,4 +140,22 @@ main{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .45);
     z-index: 10;
 }
+
+.modal-body iframe {
+    width: 100%;
+}
+
+.modal-content {
+    background-color: #111;
+}
+
+.modal-body span {
+    color: #333;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
                 
