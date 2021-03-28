@@ -42,3 +42,11 @@ NEXT UP
 
 ~ Fix the issue with iframe
 ~ Add genres to netflix clone
+
+
+25/03/2021
+
+~ Create a login form
+~ Grab the data
+~ Hash a password
+~ keep the user logged in

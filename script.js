@@ -6,14 +6,14 @@ window.onload = () => {
 }
 
 const fetchOriginals = () => {
-    var url = 'https://api.themoviedb.org/3/discover/tv?api_key=19f84e11932abbc79e6d83f82d6d1045&with_networks=213'
+    let url = 'https://api.themoviedb.org/3/discover/tv?api_key=19f84e11932abbc79e6d83f82d6d1045&with_networks=213'
     fetchMovies(url, '.original_movies', 'poster_path');
     
 }
 
 
 async function fetchMoviesBasedOnGenres(genreId) {
-    var url = `https://api.themoviedb.org/3/discover/movie?`
+    let url = `https://api.themoviedb.org/3/discover/movie?`
     url += `api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
     url += `&with_genres=${genreId}`;
     return await fetch(url)
@@ -47,7 +47,7 @@ const fetchMovies = (url, element_selector, path_type) => {
 
 
 async function getMovieTrailer(id) {
-    var url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US`
+    let url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US`
     return await fetch(url)
     .then((response) => {
         if(response.ok) {
@@ -98,8 +98,8 @@ const handleMovieSection = (e) => {
 }
 
 const showMovies = (movies, element_selector, path_type) => {
-   var movieEl = document.querySelector(element_selector);
-    for(var movie of movies.results){
+   let movieEl = document.querySelector(element_selector);
+    for(let movie of movies.results){
         let movieElement = document.createElement("img");
         movieElement.setAttribute('data-id', movie.id);
         movieElement.src =`https://image.tmdb.org/t/p/original${movie[path_type]}`
@@ -114,7 +114,7 @@ const showMovies = (movies, element_selector, path_type) => {
 
 const showMoviesGenres = (genres) => {
     genres.genres.forEach((genre) => {
-        var movies = fetchMoviesBasedOnGenres(genre.id);
+        let movies = fetchMoviesBasedOnGenres(genre.id);
         movies.then((movies) => {
             showMovieBasedOnGenre(genre.name, movies)
             // console.log(movies)
@@ -136,14 +136,15 @@ const showMovieBasedOnGenre = (genreName, movies) => {
         <h2>${genreName}</h2>
     `
 
-    var movieEl = document.createElement('div');
+    let movieEl = document.createElement('div');
     movieEl.classList.add("movies__container")
     movieEl.setAttribute("id", genreName);
     
-   for(var movie of movies.results){
-        var movieElement = document.createElement("img");
-        movieElement.setAttribute('data-id', movie.id);
-        movieElement.src =`https://image.tmdb.org/t/p/original${ "backdrop_path" in movie ? movie["backdrop_path"] : "No path available"}`
+   for(let movie of movies.results){
+        const { id, backdrop_path } = movie;
+        let movieElement = document.createElement("img");
+        movieElement.setAttribute('data-id', id);
+        movieElement.src =`https://image.tmdb.org/t/p/original${ "backdrop_path" in movie ? backdrop_path : "No path available"}`
         // console.log(movieElement)
         movieElement.addEventListener("click", (e) => {
             handleMovieSection(e);
@@ -161,7 +162,7 @@ const showMovieBasedOnGenre = (genreName, movies) => {
 
 
 const getGenres = () => {
-    var url = `https://api.themoviedb.org/3/genre/movie/list?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US`
+    let url = `https://api.themoviedb.org/3/genre/movie/list?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US`
     fetch(url)
     .then((response) => {
         if(response.ok) {
@@ -181,13 +182,13 @@ const getGenres = () => {
 
 
 const fetchTrending = () => {
-    var url = 'https://api.themoviedb.org/3/trending/movie/week?api_key=19f84e11932abbc79e6d83f82d6d1045'
+    let url = 'https://api.themoviedb.org/3/trending/movie/week?api_key=19f84e11932abbc79e6d83f82d6d1045'
     fetchMovies(url, '#trending', 'backdrop_path');
    
 }
 
 const fetchTopRated = () => {
-    var url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1'
+    let url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1'
     fetchMovies(url, '#top_rated', 'backdrop_path');
 }
 
