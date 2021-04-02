@@ -28,6 +28,29 @@ header {
     width: 40px;
 }
 
+
+.profile {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    right: 0;
+    /* top: 100%; */
+    padding: 8px;
+    width: 80px;
+    border-radius: 4px;
+    margin-top: 3px;
+    display: none;
+    background-color: #111;
+    cursor: pointer;
+}
+
+.profile:hover .dropdown {
+    display: block;
+}
+
+
 main{
     position: relative;
 }

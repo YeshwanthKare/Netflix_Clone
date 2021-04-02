@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
     <script src="/script.js"></script>
+    <script src="/session.js"></script>
 </head>
 <body>
     <header>
@@ -15,7 +16,10 @@
             <img src="/assets/logo.png" alt="">
         </div>
         <div class="profile">
-            <img src="/assets/profile.png" alt="">
+            <img class="image" src="/assets/profile.png" alt="">
+            <div class="dropdown">
+                <span onclick="logOut()">Sign Out</span>
+            </div>
         </div>
     </header>
     <main>
