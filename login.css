@@ -17,6 +17,12 @@ main {
     width: 450px;
 }
 
+.loginContainer a {
+    color: white;
+    
+}
+
+
 .loginContainer-main button {
     background-color: #e50914;
     width: 315px;
