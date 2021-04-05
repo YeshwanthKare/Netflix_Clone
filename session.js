@@ -1,15 +1,16 @@
 checkIfLoggedIn = () => {
     let currentToken = localStorage.getItem("token");
     if(currentToken){
-        console.log(currentToken)
-        if(location.href == "http://127.0.0.1:5500/login.html"){
+        // console.log(currentToken)
+        if(location.href.includes("/login.html") || location.href.includes("/register.html")){
             location.href = "/";
         }
     }else {
         // if i am currently not logged in
         // and i am trying to access unauthorized page
         // (trying to access all pages beside login)
-        if(location.href != "http://127.0.0.1:5500/login.html"){
+        if(!(location.href.includes("/login.html")) &&
+            !(location.href.includes("/register.html"))){
             location.href = "/login.html";
         }
     }

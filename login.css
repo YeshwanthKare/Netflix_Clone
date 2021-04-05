@@ -22,6 +22,14 @@ main {
     width: 315px;
 }
 
+.registered-alert {
+    display: none;
+}
+
+.already-registered {
+    display: none;
+}
+
 
 .background-wrapper {
     position: absolute;

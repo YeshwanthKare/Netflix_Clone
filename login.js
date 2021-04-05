@@ -3,6 +3,30 @@ let apiUrl = `http://localhost:3000`
 
 
 
+var queryString = window.location.search;
+var urlParams = new URLSearchParams(queryString);
+const existingEmail = urlParams.get("existingEmail");
+const registered = urlParams.get("registered")
+const alreadyRegistered = urlParams.get("user")
+console.log(registered)
+// console.log(urlParams)
+if(existingEmail){
+    form.email.value = existingEmail;
+
+}
+
+
+if(registered){
+    document.querySelector(".registered-alert").style.display = "block"        
+}
+
+if(alreadyRegistered){
+    document.querySelector(".already-registered").style.display = "block"
+}
+
+
+
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     let payload = {
