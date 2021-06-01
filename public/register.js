@@ -1,5 +1,5 @@
 let form = document.getElementById("registerForm");
-let apiUrl = `http://localhost:3000`
+let apiUrl = `https://yesh-netflix-api.herokuapp.com/`
 
 // https://yesh-netflix-api.herokuapp.com/
 
@@ -12,7 +12,7 @@ form.addEventListener("submit", (e) => {
     }
     console.log(payload);
 
-    fetch(`${apiUrl}/register`, {
+    fetch(`${apiUrl}register`, {
         method: "POST",
         headers: {
             'Content-Type' : 'application/json'
