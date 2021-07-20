@@ -2,7 +2,30 @@ window.onload = () => {
     fetchOriginals();
     fetchTrending();
     fetchTopRated();
-    getGenres()
+    getGenres();
+    getWishlist();
+}
+
+const getWishlist = () => {
+    fetch("http://localhost:3000/wishlist",{
+        headers:{
+            Authorization: `${localStorage.getItem('token')}`
+        }
+    })
+    .then((res) => {
+        if(res.ok){
+            return res.json();            
+        } else {
+            logOut();
+            console.log("Something went wrong");
+        }
+    })
+    .then((data) => {
+        console.log(data)
+    })
+    .catch((error) => {
+        console.log(error);
+    })
 }
 
 const fetchOriginals = () => {
