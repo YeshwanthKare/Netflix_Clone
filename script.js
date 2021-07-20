@@ -7,7 +7,7 @@ window.onload = () => {
 }
 
 const getWishlist = () => {
-    fetch("http://localhost:3000/wishlist",{
+    fetch("https://yesh-netflix-api.herokuapp.com/wishlist",{
         headers:{
             Authorization: `${localStorage.getItem('token')}`
         }
