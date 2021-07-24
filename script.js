@@ -6,8 +6,11 @@ window.onload = () => {
     getWishlist();
 }
 
+// let url = "https://yesh-netflix-api.herokuapp.com/wishlist";
+let url = "http://localhost:3000/wishlist"
+
 const getWishlist = () => {
-    fetch("https://yesh-netflix-api.herokuapp.com/wishlist",{
+    fetch(url,{
         headers:{
             Authorization: `${localStorage.getItem('token')}`
         }
@@ -22,6 +25,7 @@ const getWishlist = () => {
     })
     .then((data) => {
         console.log(data)
+        showMovies(data, "#wishlist", "backdrop_path")
     })
     .catch((error) => {
         console.log(error);
