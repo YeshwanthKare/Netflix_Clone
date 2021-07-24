@@ -6,8 +6,8 @@ window.onload = () => {
     getWishlist();
 }
 
-let url = "https://yesh-netflix-api.herokuapp.com/wishlist";
-// let url = "http://localhost:3000/wishlist"
+// let url = "https://yesh-netflix-api.herokuapp.com/wishlist";
+let url = "http://localhost:3000/wishlist"
 
 const getWishlist = () => {
     fetch(url,{
