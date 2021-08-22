@@ -1,6 +1,6 @@
 let form = document.getElementById("loginForm");
-let apiUrl = `https://yesh-netflix-api.herokuapp.com/`;
-// let apiUrl = `http://localhost:3000/`;
+// let apiUrl = `https://yesh-netflix-api.herokuapp.com/`;
+let apiUrl = `http://localhost:3000/`;
 
 // https://yesh-netflix-api.herokuapp.com/
 
@@ -32,7 +32,6 @@ form.addEventListener("submit", (e) => {
   console.log(payload);
 
   fetch(`${apiUrl}login`, {
-    mode: "no-cors",
     method: "POST",
     headers: {
       "Content-Type": "application/json",
